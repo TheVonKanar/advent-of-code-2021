@@ -1,5 +1,11 @@
-fn main() {
-    let mut input: Vec<&str> = include_str!("../input.txt").split("\n\n").collect();
+fn parse_input() -> Vec<&'static str> {
+    include_str!("../../data/day4.txt")
+        .split("\r\n\r\n")
+        .collect()
+}
+
+pub fn process() -> (i32, i32) {
+    let mut input = parse_input();
     let mut output = (-1, -1);
 
     let sequence = input.swap_remove(0);
@@ -11,7 +17,7 @@ fn main() {
             board.push(
                 line.split_whitespace()
                     .map(|x| x.parse().unwrap())
-                    .collect::<Vec<isize>>(),
+                    .collect::<Vec<i32>>(),
             );
         }
 
@@ -19,7 +25,7 @@ fn main() {
     }
 
     let mut winning_boards = Vec::new();
-    for draw in sequence.split(",").map(|x| x.parse::<isize>().unwrap()) {
+    for draw in sequence.split(",").map(|x| x.parse().unwrap()) {
         for board in 0..boards.len() {
             for row in 0..boards[board].len() {
                 for col in 0..boards[board][row].len() {
@@ -53,11 +59,10 @@ fn main() {
         }
     }
 
-    println!("Part 1 = {}", output.0);
-    println!("Part 2 = {}", output.1);
+    output
 }
 
-fn compute_board_sum(board: &Vec<Vec<isize>>) -> isize {
+fn compute_board_sum(board: &Vec<Vec<i32>>) -> i32 {
     let mut sum = 0;
     for row in 0..board.len() {
         for col in 0..board[row].len() {
