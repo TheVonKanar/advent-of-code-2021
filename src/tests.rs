@@ -31,4 +31,9 @@ mod tests {
     fn day6() {
         assert_eq!(day6::process(), (372300, 1675781200288));
     }
+
+    #[test]
+    fn day7() {
+        assert_eq!(day7::process(), (336120, 96864235));
+    }
 }

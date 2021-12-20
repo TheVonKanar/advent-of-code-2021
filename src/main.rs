@@ -24,6 +24,7 @@ fn main() {
         "day4" | "4" => processors::day4::process(),
         "day5" | "5" => processors::day5::process(),
         "day6" | "6" => processors::day6::process(),
+        "day7" | "7" => processors::day7::process(),
         _ => (0, 0),
     };
 

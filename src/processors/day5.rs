@@ -10,12 +10,12 @@ fn parse_input() -> Vec<usize> {
         .collect()
 }
 
-pub fn process() -> (isize, isize) {
+pub fn process() -> (usize, usize) {
     let input = parse_input();
     (process_grid(&input, true), process_grid(&input, false))
 }
 
-fn process_grid(input: &Vec<usize>, skip_diagonal: bool) -> isize {
+fn process_grid(input: &Vec<usize>, skip_diagonal: bool) -> usize {
     let mut result = 0;
 
     let size = input.iter().max().unwrap() + 1;

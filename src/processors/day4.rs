@@ -4,9 +4,9 @@ fn parse_input() -> Vec<&'static str> {
         .collect()
 }
 
-pub fn process() -> (isize, isize) {
+pub fn process() -> (usize, usize) {
     let mut input = parse_input();
-    let mut output = (-1, -1);
+    let mut output: (isize, isize) = (-1, -1);
 
     let sequence = input.swap_remove(0);
 
@@ -59,7 +59,7 @@ pub fn process() -> (isize, isize) {
         }
     }
 
-    output
+    (output.0 as usize, output.1 as usize)
 }
 
 fn compute_board_sum(board: &Vec<Vec<isize>>) -> isize {

@@ -2,7 +2,7 @@ fn parse_input() -> Vec<&'static str> {
     include_str!("../../data/day2.txt").lines().collect()
 }
 
-pub fn process() -> (isize, isize) {
+pub fn process() -> (usize, usize) {
     let input = parse_input();
     let mut output = (0, 0);
 
@@ -12,7 +12,7 @@ pub fn process() -> (isize, isize) {
     for line in &input {
         let mut split = line.split(" ");
         let cmd = split.next().unwrap();
-        let value: isize = split.next().unwrap().parse().unwrap();
+        let value: usize = split.next().unwrap().parse().unwrap();
         match cmd {
             "forward" => {
                 pos += value;

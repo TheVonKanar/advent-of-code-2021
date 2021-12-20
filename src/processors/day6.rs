@@ -5,12 +5,12 @@ fn parse_input() -> Vec<usize> {
         .collect()
 }
 
-pub fn process() -> (isize, isize) {
+pub fn process() -> (usize, usize) {
     let input = parse_input();
     (count_fish(&input, 80), count_fish(&input, 256))
 }
 
-fn count_fish(input: &Vec<usize>, duration: usize) -> isize {
+fn count_fish(input: &Vec<usize>, duration: usize) -> usize {
     let mut fishes = vec![0; 9];
     for i in 0..input.len() {
         fishes[input[i]] += 1;
