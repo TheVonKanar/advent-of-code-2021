@@ -4,7 +4,7 @@ fn parse_input() -> Vec<&'static str> {
         .collect()
 }
 
-pub fn process() -> (i32, i32) {
+pub fn process() -> (isize, isize) {
     let mut input = parse_input();
     let mut output = (-1, -1);
 
@@ -17,7 +17,7 @@ pub fn process() -> (i32, i32) {
             board.push(
                 line.split_whitespace()
                     .map(|x| x.parse().unwrap())
-                    .collect::<Vec<i32>>(),
+                    .collect::<Vec<isize>>(),
             );
         }
 
@@ -62,7 +62,7 @@ pub fn process() -> (i32, i32) {
     output
 }
 
-fn compute_board_sum(board: &Vec<Vec<i32>>) -> i32 {
+fn compute_board_sum(board: &Vec<Vec<isize>>) -> isize {
     let mut sum = 0;
     for row in 0..board.len() {
         for col in 0..board[row].len() {

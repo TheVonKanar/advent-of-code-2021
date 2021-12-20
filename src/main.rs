@@ -1,12 +1,13 @@
 use clap::{App, Arg};
 
 mod grid;
+mod helpers;
 mod processors;
 mod tests;
 
 fn main() {
     let matches = App::new("Advent of Code 2021")
-        .version("0.5.0")
+        .version("0.6.0")
         .author("TheVonKanar")
         .arg(
             Arg::with_name("PROCESSOR")
@@ -22,6 +23,7 @@ fn main() {
         "day3" | "3" => processors::day3::process(),
         "day4" | "4" => processors::day4::process(),
         "day5" | "5" => processors::day5::process(),
+        "day6" | "6" => processors::day6::process(),
         _ => (0, 0),
     };
 

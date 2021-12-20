@@ -5,23 +5,6 @@ pub struct Grid {
     values: Vec<Vec<isize>>,
 }
 
-impl ToString for Grid {
-    fn to_string(&self) -> String {
-        let mut result = String::new();
-        for y in 0..self.h {
-            for x in 0..self.w {
-                result.push_str(self.get(x, y).to_string().as_str());
-                result.push(',');
-            }
-
-            result.pop();
-            result.push('\n');
-        }
-
-        result
-    }
-}
-
 impl Grid {
     pub fn new(w: usize, h: usize) -> Grid {
         Grid {

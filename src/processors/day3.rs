@@ -2,7 +2,7 @@ fn parse_input() -> Vec<&'static str> {
     include_str!("../../data/day3.txt").lines().collect()
 }
 
-pub fn process() -> (i32, i32) {
+pub fn process() -> (isize, isize) {
     let input = parse_input();
     let mut output = (0, 0);
 
@@ -35,8 +35,8 @@ pub fn process() -> (i32, i32) {
         }
     }
 
-    let gamma_rate = i32::from_str_radix(gamma_bits.as_str(), 2).unwrap();
-    let epsilon_rate = i32::from_str_radix(epsilon_bits.as_str(), 2).unwrap();
+    let gamma_rate = isize::from_str_radix(gamma_bits.as_str(), 2).unwrap();
+    let epsilon_rate = isize::from_str_radix(epsilon_bits.as_str(), 2).unwrap();
     output.0 = gamma_rate * epsilon_rate;
 
     // Oxygen Generator rating.
@@ -60,7 +60,7 @@ pub fn process() -> (i32, i32) {
         char_index += 1;
     }
 
-    let oxygen_rating = i32::from_str_radix(candidates.last().unwrap(), 2).unwrap();
+    let oxygen_rating = isize::from_str_radix(candidates.last().unwrap(), 2).unwrap();
 
     // CO2 Scrubber rating
     char_index = 0;
@@ -83,7 +83,7 @@ pub fn process() -> (i32, i32) {
         char_index += 1;
     }
 
-    let co2_rating = i32::from_str_radix(candidates.last().unwrap(), 2).unwrap();
+    let co2_rating = isize::from_str_radix(candidates.last().unwrap(), 2).unwrap();
     output.1 = oxygen_rating * co2_rating;
 
     output
