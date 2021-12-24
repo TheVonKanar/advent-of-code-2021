@@ -1,6 +1,5 @@
 use clap::{App, Arg};
 
-mod grid;
 mod helpers;
 mod processors;
 mod tests;
@@ -26,6 +25,7 @@ fn main() {
         "day6" | "6" => processors::day6::process(),
         "day7" | "7" => processors::day7::process(),
         "day8" | "8" => processors::day8::process(),
+        "day9" | "9" => processors::day9::process(),
         _ => (0, 0),
     };
 
