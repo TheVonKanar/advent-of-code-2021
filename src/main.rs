@@ -17,15 +17,15 @@ fn main() {
 
     let processor = matches.value_of("PROCESSOR").unwrap();
     let result = match processor {
-        "day1" | "1" => processors::day1::process(),
-        "day2" | "2" => processors::day2::process(),
-        "day3" | "3" => processors::day3::process(),
-        "day4" | "4" => processors::day4::process(),
-        "day5" | "5" => processors::day5::process(),
-        "day6" | "6" => processors::day6::process(),
-        "day7" | "7" => processors::day7::process(),
-        "day8" | "8" => processors::day8::process(),
-        "day9" | "9" => processors::day9::process(),
+        "1" => processors::day01::process(),
+        "2" => processors::day02::process(),
+        "3" => processors::day03::process(),
+        "4" => processors::day04::process(),
+        "5" => processors::day05::process(),
+        "6" => processors::day06::process(),
+        "7" => processors::day07::process(),
+        "8" => processors::day08::process(),
+        "9" => processors::day09::process(),
         _ => (0, 0),
     };
 

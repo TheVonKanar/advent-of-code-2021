@@ -2,7 +2,7 @@ use grid::*;
 
 fn parse_input() -> Grid<Cell> {
     let mut grid: Grid<Cell> = grid![[]];
-    for line in include_str!("../../data/day9.txt").lines() {
+    for line in include_str!("../../data/day09.txt").lines() {
         grid.push_row(
             line.chars()
                 .map(|x| Cell {

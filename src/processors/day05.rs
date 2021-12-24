@@ -6,7 +6,7 @@ use regex::Regex;
 fn parse_input() -> Vec<usize> {
     Regex::new(r"[0-9]+")
         .unwrap()
-        .find_iter(include_str!("../../data/day5.txt"))
+        .find_iter(include_str!("../../data/day05.txt"))
         .map(|x| x.as_str().parse().unwrap())
         .collect()
 }

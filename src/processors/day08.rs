@@ -1,5 +1,5 @@
 fn parse_input() -> Vec<&'static str> {
-    include_str!("../../data/day8.txt").lines().collect()
+    include_str!("../../data/day08.txt").lines().collect()
 }
 
 pub fn process() -> (usize, usize) {

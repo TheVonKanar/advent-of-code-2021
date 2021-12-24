@@ -1,5 +1,5 @@
 fn parse_input() -> Vec<u32> {
-    include_str!("../../data/day1.txt")
+    include_str!("../../data/day01.txt")
         .lines()
         .map(|i| i.parse().unwrap())
         .collect()

@@ -1,7 +1,7 @@
 use crate::helpers::abs_diff;
 
 fn parse_input() -> Vec<usize> {
-    include_str!("../../data/day7.txt")
+    include_str!("../../data/day07.txt")
         .split(',')
         .map(|x| x.trim().parse().unwrap())
         .collect()

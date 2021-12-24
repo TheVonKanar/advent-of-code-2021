@@ -1,5 +1,5 @@
 fn parse_input() -> Vec<&'static str> {
-    include_str!("../../data/day4.txt")
+    include_str!("../../data/day04.txt")
         .split("\r\n\r\n")
         .collect()
 }

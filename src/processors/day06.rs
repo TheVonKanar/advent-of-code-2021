@@ -1,5 +1,5 @@
 fn parse_input() -> Vec<usize> {
-    include_str!("../../data/day6.txt")
+    include_str!("../../data/day06.txt")
         .split(',')
         .map(|x| x.trim().parse().unwrap())
         .collect()
