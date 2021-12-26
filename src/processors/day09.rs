@@ -85,7 +85,7 @@ fn process_basin(grid: &mut Grid<Cell>, x: usize, y: usize, basin_index: usize, 
 }
 
 #[derive(Clone, Copy, Debug)]
-pub struct Cell {
+struct Cell {
     height: usize,
     is_low_point: bool,
     basin: usize,
