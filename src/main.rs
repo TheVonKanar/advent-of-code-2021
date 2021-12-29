@@ -8,7 +8,7 @@ mod tests;
 
 fn main() {
     let matches = App::new("Advent of Code 2021")
-        .version("0.14.0")
+        .version("0.15.0")
         .author("TheVonKanar")
         .arg(
             Arg::with_name("DAY")
@@ -33,6 +33,7 @@ fn main() {
         "12" => execute(processors::day12::processor),
         "13" => execute(processors::day13::processor),
         "14" => execute(processors::day14::processor),
+        "15" => execute(processors::day15::processor),
         _ => (),
     }
 }
