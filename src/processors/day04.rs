@@ -4,7 +4,7 @@ fn parse_input() -> Vec<&'static str> {
         .collect()
 }
 
-pub fn process() -> (usize, usize) {
+pub fn processor() -> (usize, usize) {
     let mut input = parse_input();
     let mut output: (isize, isize) = (-1, -1);
 

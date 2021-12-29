@@ -18,7 +18,7 @@ fn parse_input() -> Grid<Octopus> {
     grid
 }
 
-pub fn process() -> (usize, usize) {
+pub fn processor() -> (usize, usize) {
     let mut grid = parse_input();
     let mut output = (0, 0);
 

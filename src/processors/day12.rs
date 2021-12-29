@@ -25,7 +25,7 @@ fn parse_room(rooms: &mut Vec<Room>, name: &'static str, link: &'static str) {
     }
 }
 
-pub fn process() -> (usize, usize) {
+pub fn processor() -> (usize, usize) {
     let cave = parse_input();
     let mut output = (0, 0);
 

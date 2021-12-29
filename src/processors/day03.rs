@@ -2,7 +2,7 @@ fn parse_input() -> Vec<&'static str> {
     include_str!("../../data/day03.txt").lines().collect()
 }
 
-pub fn process() -> (usize, usize) {
+pub fn processor() -> (usize, usize) {
     let input = parse_input();
     let mut output = (0, 0);
 

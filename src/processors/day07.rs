@@ -7,7 +7,7 @@ fn parse_input() -> Vec<usize> {
         .collect()
 }
 
-pub fn process() -> (usize, usize) {
+pub fn processor() -> (usize, usize) {
     let input = parse_input();
     let mut output = (usize::MAX, usize::MAX);
     let range = *input.iter().min().unwrap()..*input.iter().max().unwrap();

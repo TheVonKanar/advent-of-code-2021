@@ -1,3 +1,5 @@
+use std::{fmt::Display, time::Instant};
+
 use clap::{App, Arg};
 
 mod helpers;
@@ -6,32 +8,43 @@ mod tests;
 
 fn main() {
     let matches = App::new("Advent of Code 2021")
-        .version("0.12.0")
+        .version("0.14.0")
         .author("TheVonKanar")
         .arg(
-            Arg::with_name("PROCESSOR")
-                .help("Sets the processor to use")
+            Arg::with_name("DAY")
+                .help("Sets the day to process")
                 .required(true),
         )
         .get_matches();
 
-    let processor = matches.value_of("PROCESSOR").unwrap();
-    let result = match processor {
-        "1" => processors::day01::process(),
-        "2" => processors::day02::process(),
-        "3" => processors::day03::process(),
-        "4" => processors::day04::process(),
-        "5" => processors::day05::process(),
-        "6" => processors::day06::process(),
-        "7" => processors::day07::process(),
-        "8" => processors::day08::process(),
-        "9" => processors::day09::process(),
-        "10" => processors::day10::process(),
-        "11" => processors::day11::process(),
-        "12" => processors::day12::process(),
-        _ => (0, 0),
-    };
+    let day = matches.value_of("DAY").unwrap();
+    match day {
+        "1" => execute(processors::day01::processor),
+        "2" => execute(processors::day02::processor),
+        "3" => execute(processors::day03::processor),
+        "4" => execute(processors::day04::processor),
+        "5" => execute(processors::day05::processor),
+        "6" => execute(processors::day06::processor),
+        "7" => execute(processors::day07::processor),
+        "8" => execute(processors::day08::processor),
+        "9" => execute(processors::day09::processor),
+        "10" => execute(processors::day10::processor),
+        "11" => execute(processors::day11::processor),
+        "12" => execute(processors::day12::processor),
+        "13" => execute(processors::day13::processor),
+        "14" => execute(processors::day14::processor),
+        _ => (),
+    }
+}
 
+fn execute<R1, R2>(processor: fn() -> (R1, R2))
+where
+    R1: Display,
+    R2: Display,
+{
+    let now = Instant::now();
+    let result = processor();
     println!("Part 1 = {}", result.0);
     println!("Part 2 = {}", result.1);
+    println!("Duration = {}ms", now.elapsed().as_millis());
 }

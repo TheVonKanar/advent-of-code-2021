@@ -5,7 +5,7 @@ fn parse_input() -> Vec<usize> {
         .collect()
 }
 
-pub fn process() -> (usize, usize) {
+pub fn processor() -> (usize, usize) {
     let input = parse_input();
     (count_fish(&input, 80), count_fish(&input, 256))
 }

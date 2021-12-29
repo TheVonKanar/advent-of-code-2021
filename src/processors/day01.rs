@@ -5,7 +5,7 @@ fn parse_input() -> Vec<u32> {
         .collect()
 }
 
-pub fn process() -> (usize, usize) {
+pub fn processor() -> (usize, usize) {
     let input = parse_input();
     let mut output = (0, 0);
 

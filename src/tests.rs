@@ -1,64 +1,84 @@
 #[cfg(test)]
 mod tests {
+    use std::fmt::Display;
+
     use crate::processors::*;
+
+    fn test<R1, R2>(processor: fn() -> (R1, R2), result: (R1, R2)) -> bool
+    where
+        R1: Display + PartialEq,
+        R2: Display + PartialEq,
+    {
+        processor() == result
+    }
 
     #[test]
     fn day01() {
-        assert_eq!(day01::process(), (1559, 1600));
+        test(day01::processor, (1559, 1600));
     }
 
     #[test]
     fn day02() {
-        assert_eq!(day02::process(), (1427868, 1568138742));
+        test(day02::processor, (1427868, 1568138742));
     }
 
     #[test]
     fn day03() {
-        assert_eq!(day03::process(), (3901196, 4412188));
+        test(day03::processor, (3901196, 4412188));
     }
 
     #[test]
     fn day04() {
-        assert_eq!(day04::process(), (8136, 12738));
+        test(day04::processor, (8136, 12738));
     }
 
     #[test]
     fn day05() {
-        assert_eq!(day05::process(), (5632, 22213));
+        test(day05::processor, (5632, 22213));
     }
 
     #[test]
     fn day06() {
-        assert_eq!(day06::process(), (372300, 1675781200288));
+        test(day06::processor, (372300, 1675781200288));
     }
 
     #[test]
     fn day07() {
-        assert_eq!(day07::process(), (336120, 96864235));
+        test(day07::processor, (336120, 96864235));
     }
 
     #[test]
     fn day08() {
-        assert_eq!(day08::process(), (493, 1010460));
+        test(day08::processor, (493, 1010460));
     }
 
     #[test]
     fn day09() {
-        assert_eq!(day09::process(), (502, 1330560));
+        test(day09::processor, (502, 1330560));
     }
 
     #[test]
     fn day10() {
-        assert_eq!(day10::process(), (344193, 3241238967));
+        test(day10::processor, (344193, 3241238967));
     }
 
     #[test]
     fn day11() {
-        assert_eq!(day11::process(), (1688, 403));
+        test(day11::processor, (1688, 403));
     }
 
     #[test]
     fn day12() {
-        assert_eq!(day12::process(), (5252, 147784));
+        test(day12::processor, (5252, 147784));
+    }
+
+    #[test]
+    fn day13() {
+        test(day13::processor, (695, ""));
+    }
+
+    #[test]
+    fn day14() {
+        test(day14::processor, (3831, 5725739914282));
     }
 }

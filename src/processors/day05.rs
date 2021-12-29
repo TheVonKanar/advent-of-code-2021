@@ -11,7 +11,7 @@ fn parse_input() -> Vec<usize> {
         .collect()
 }
 
-pub fn process() -> (usize, usize) {
+pub fn processor() -> (usize, usize) {
     let input = parse_input();
     (process_grid(&input, true), process_grid(&input, false))
 }
