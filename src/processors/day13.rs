@@ -2,7 +2,8 @@ use crate::helpers::printgrid;
 use grid::grid;
 
 fn parse_input() -> (Vec<(usize, usize)>, Vec<(char, usize)>) {
-    let mut sections = include_str!("../../data/day13.txt").split("\r\n\r\n");
+    let data = include_str!("../../data/day13.txt").replace("\r\n\r\n", "\n\n");
+    let mut sections = data.split("\n\n");
 
     let mut dots: Vec<(usize, usize)> = Vec::new();
     for line in sections.next().unwrap().lines() {
