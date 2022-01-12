@@ -91,4 +91,9 @@ mod tests {
     fn day16() {
         test(day16::processor, (901, 110434737925));
     }
+
+    #[test]
+    fn day17() {
+        test(day17::processor, (6903, 2351));
+    }
 }
