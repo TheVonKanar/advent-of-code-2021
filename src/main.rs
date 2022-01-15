@@ -36,6 +36,7 @@ fn main() {
         "15" => execute(processors::day15::processor),
         "16" => execute(processors::day16::processor),
         "17" => execute(processors::day17::processor),
+        "18" => execute(processors::day18::processor),
         _ => (),
     }
 }
